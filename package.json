@@ -1,0 +1,35 @@
+{
+  "name": "posttype7-next-starter-pack",
+  "version": "0.1.0",
+  "description": "Frontend enviroment",
+  "author": "dadmor@gmail.com",
+  "license": "GPL",
+  "private": true,
+  "scripts": {
+    "prettier:fix": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json}\"",
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p 3001"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.0",
+    "next": "^12.2.0",
+    "next-compose-plugins": "^2.2.0",
+    "next-images": "^1.8.1",
+    "postcss": "^8.3.11",
+    "postcss-import": "^14.0.2",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.6.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "tailwindcss": "^3.1.7"
+  },
+  "devDependencies": {
+    "@types/next": "^9.0.0",
+    "@types/node": "^14.0.22",
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
+    "typescript": "^4.6.4"
+  }
+}

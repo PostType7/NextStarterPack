@@ -1,0 +1,7 @@
+public
+node_modules
+pages
+src/components/themes
+.next
+.env
+.env.local

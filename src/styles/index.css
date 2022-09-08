@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "helveticaNaue";
+  src: url("../public/fonts/helveticaNeue/HelveticaNeue-Medium.woff2");
+}
+
+html {
+  font-family: 'helveticaNaue';
+  color: theme('colors.gray.900');
+}
+
