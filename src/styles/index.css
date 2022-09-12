@@ -1,5 +1,14 @@
 @tailwind base;
 @tailwind components;
+/* 
+body {
+  @apply w-full;
+} */
+
+#__next {
+  @apply flex flex-col h-screen text-gray-600 leading-normal text-base tracking-normal;
+}
+
 @tailwind utilities;
 
 @font-face {
@@ -11,4 +20,5 @@ html {
   font-family: 'helveticaNaue';
   color: theme('colors.gray.900');
 }
+
 
