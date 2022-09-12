@@ -1,7 +1,15 @@
-import { blastClass, gapConditions, paddingConditions } from "helpers/pureblast";
+import {
+  mixClass,
+  gapConditions,
+  paddingConditions,
+  widthConditions,
+  bgColorConditions,
+} from "helpers/PT7mixClass";
 
 interface Props {
   spacing?: string;
+  width?: string;
+  bgColor?: string;
   className?: string;
   header?: any; // TODO NODE
   footer?: any; // TODO NODE
@@ -10,6 +18,8 @@ interface Props {
 export const Card: React.FC<Props> = ({
   className = "",
   spacing = "md",
+  width = "",
+  bgColor = "",
   horizontal = false,
   children,
   header,
@@ -17,14 +27,16 @@ export const Card: React.FC<Props> = ({
 }) => {
   return (
     <div
-      className={blastClass({
+      className={mixClass({
         "rounded shadow bg-white": true,
         [className]: true,
+        ...widthConditions(width),
+        ...bgColorConditions(bgColor),
       })}
     >
       {header ? (
         <div
-          className={blastClass({
+          className={mixClass({
             "border-b": true,
             ...paddingConditions(spacing),
           })}
@@ -33,18 +45,17 @@ export const Card: React.FC<Props> = ({
         </div>
       ) : null}
       <div
-        className={blastClass({
-          'flex items-center': horizontal,
+        className={mixClass({
+          "flex items-center": horizontal,
           ...paddingConditions(spacing),
           ...gapConditions(spacing),
-          
         })}
       >
         {children}
       </div>
       {footer ? (
         <div
-          className={blastClass({
+          className={mixClass({
             "border-t flex": true,
             ...paddingConditions(spacing),
           })}
