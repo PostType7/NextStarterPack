@@ -1,4 +1,4 @@
-import { blastClass, textColorConditions, widthConditions } from "helpers/pureblast";
+import { mixClass, textColorConditions, widthConditions } from "helpers/PT7mixClass";
 import { TextMD, TextSM } from ".";
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 }
 export const TextCell: React.FC<Props> = ({ title, subTitle, className = "", width="" }) => {
   return (
-    <div className={blastClass({
+    <div className={mixClass({
       '':true,
       [className]: true,
       ...widthConditions(width),

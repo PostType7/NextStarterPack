@@ -1,4 +1,4 @@
-import { blastClass, textColorConditions, textHoverColorConditions } from "helpers/pureblast";
+import { mixClass, textColorConditions, textHoverColorConditions } from "helpers/PT7mixClass";
 import { HStack } from "../layout";
 import Link from "next/link";
 
@@ -19,7 +19,7 @@ export const NavItem: React.FC<Props> = ({
   return (
     <Link href={href ? href : "/"}>
       <a
-        className={blastClass({
+        className={mixClass({
           "cursor-pointer": true,
           [className]: true,
           ...textColorConditions(color),

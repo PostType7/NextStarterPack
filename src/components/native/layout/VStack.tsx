@@ -1,8 +1,8 @@
 import {
-  blastClass,
+  mixClass,
   gapConditions,
   justifyConditions,
-} from "helpers/pureblast";
+} from "helpers/PT7mixClass";
 
 interface Props {
   spacing?: string;
@@ -17,7 +17,7 @@ export const VStack: React.FC<Props> = ({
 }) => {
   return (
     <div
-      className={blastClass({
+      className={mixClass({
         'flex flex-col': true,
         [className]: true,
         ...justifyConditions(justify),

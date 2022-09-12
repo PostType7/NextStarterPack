@@ -1,4 +1,4 @@
-import { blastClass, textColorConditions } from "helpers/pureblast";
+import { mixClass, textColorConditions } from "helpers/PT7mixClass";
 
 interface Props {
   color?: string;
@@ -11,7 +11,7 @@ export const TextXL: React.FC<Props> = ({
 }) => {
   return (
     <p
-      className={blastClass({
+      className={mixClass({
         'text-xl':true,
         [className]: true,
         ...textColorConditions(color),

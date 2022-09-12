@@ -1,4 +1,4 @@
-import { blastClass, textColorConditions, widthConditions } from "helpers/pureblast";
+import { mixClass, textColorConditions, widthConditions } from "helpers/PT7mixClass";
 
 interface Props {
   color?: string;
@@ -13,7 +13,7 @@ export const TextSM: React.FC<Props> = ({
 }) => {
   return (
     <p
-      className={blastClass({
+      className={mixClass({
         'text-sm':true,
         [className]: true,
         ...textColorConditions(color),
