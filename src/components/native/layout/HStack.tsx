@@ -1,9 +1,9 @@
 import {
-  blastClass,
+  mixClass,
   gapConditions,
   justifyConditions,
   paddingConditions,
-} from "helpers/pureblast";
+} from "helpers/PT7mixClass";
 
 interface Props {
   spacing?: string;
@@ -20,7 +20,7 @@ export const HStack: React.FC<Props> = ({
 }) => {
   return (
     <div
-      className={blastClass({
+      className={mixClass({
         "flex items-center": true,
         [className]: true,
         ...justifyConditions(justify),
