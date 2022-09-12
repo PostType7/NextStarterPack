@@ -5,7 +5,7 @@ interface Props {
   width?: string;
   className?: string;
 }
-export const TextMD: React.FC<Props> = ({
+export const TextXS: React.FC<Props> = ({
   className = "",
   color = "primary",
   width = "",
@@ -14,7 +14,7 @@ export const TextMD: React.FC<Props> = ({
   return (
     <p
       className={mixClass({
-        'text-base':true,
+        'text-xs':true,
         [className]: true,
         ...textColorConditions(color),
         ...widthConditions(width),
