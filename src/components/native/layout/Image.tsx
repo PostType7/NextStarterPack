@@ -1,27 +1,33 @@
-import {
-  blastClass, roundedConditions,
-} from "helpers/pureblast";
+import { mixClass, roundedConditions, sizeConditions } from "helpers/PT7mixClass";
 
 interface Props {
   size?: string;
   rounded?: string;
   className?: string;
+  url?: string | URL;
 }
 export const Image: React.FC<Props> = ({
-  className = '',
+  className = "",
   size = "md",
   rounded = "full",
+  url = "",
 }) => {
   return (
     <div
-      className={blastClass({
-        'w-12 h-12 bg-red-200 flex items-center justify-center': true,
+      className={mixClass({
+        "bg-red-200 flex items-center justify-center overflow-hidden": true,
         ...roundedConditions(rounded),
+        ...sizeConditions(size),
         [className]: true,
       })}
     >
-      IMG
+      {url ? (
+        // Type 'string | URL' is not assignable to type 'string | undefined'.
+        // @ts-ignore
+        <img src={url} />
+      ) : (
+        <span>IMG</span>
+      )}
     </div>
   );
 };
-// export default Image;
