@@ -1,0 +1,3 @@
+export const errorPArser = (error:any) => {
+    console.log('parse:', error)
+}
