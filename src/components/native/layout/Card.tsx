@@ -4,7 +4,7 @@ import {
   paddingConditions,
   widthConditions,
   bgColorConditions,
-} from "helpers/PT7mixClass";
+} from "helpers/P7mixClass";
 
 interface Props {
   spacing?: string;

@@ -1,4 +1,8 @@
-import { mixClass, textColorConditions, widthConditions } from "helpers/PT7mixClass";
+import {
+  mixClass,
+  textColorConditions,
+  widthConditions,
+} from "helpers/P7mixClass";
 
 interface Props {
   color?: string;
@@ -14,7 +18,7 @@ export const TextSM: React.FC<Props> = ({
   return (
     <p
       className={mixClass({
-        'text-sm':true,
+        "text-sm": true,
         [className]: true,
         ...textColorConditions(color),
         ...widthConditions(width),

@@ -1,4 +1,8 @@
-import { mixClass, roundedConditions, sizeConditions } from "helpers/PT7mixClass";
+import {
+  mixClass,
+  roundedConditions,
+  sizeConditions,
+} from "helpers/P7mixClass";
 
 interface Props {
   size?: string;

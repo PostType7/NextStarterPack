@@ -1,4 +1,4 @@
-import { mixClass, textColorConditions } from "helpers/PT7mixClass";
+import { mixClass, textColorConditions } from "helpers/P7mixClass";
 
 interface Props {
   color?: string;
@@ -12,7 +12,7 @@ export const TextXL: React.FC<Props> = ({
   return (
     <p
       className={mixClass({
-        'text-xl':true,
+        "text-xl": true,
         [className]: true,
         ...textColorConditions(color),
       })}

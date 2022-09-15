@@ -1,4 +1,8 @@
-import { mixClass, textColorConditions, widthConditions } from "helpers/PT7mixClass";
+import {
+  mixClass,
+  textColorConditions,
+  widthConditions,
+} from "helpers/P7mixClass";
 import { TextMD, TextSM } from ".";
 
 interface Props {
@@ -7,13 +11,20 @@ interface Props {
   className?: string;
   width?: string;
 }
-export const TextCell: React.FC<Props> = ({ title, subTitle, className = "", width="" }) => {
+export const TextCell: React.FC<Props> = ({
+  title,
+  subTitle,
+  className = "",
+  width = "",
+}) => {
   return (
-    <div className={mixClass({
-      '':true,
-      [className]: true,
-      ...widthConditions(width),
-    })}>
+    <div
+      className={mixClass({
+        "": true,
+        [className]: true,
+        ...widthConditions(width),
+      })}
+    >
       <TextMD>{title}</TextMD>
       <TextSM color="light">{subTitle}</TextSM>
     </div>

@@ -2,42 +2,38 @@ import {
   mixClass,
   gapConditions,
   justifyConditions,
-  paddingConditions,
-  paddingxConditions,
-  widthConditions,
+  itemsConditions,
 } from "helpers/P7mixClass";
 
 interface Props {
   spacing?: string;
+  items?: string;
   justify?: string;
+  columns?: number;
   className?: string;
-  padding?: string;
-  paddingx?: string;
-  width?: string;
 }
-export const HStack: React.FC<Props> = ({
+export const Grid: React.FC<Props> = ({
   className = "",
   spacing = "md",
   justify = "between",
+  columns = 0,
+  items = "",
   children,
-  padding = "",
-  paddingx = "",
-  width = "",
 }) => {
   return (
     <div
       className={mixClass({
-        "flex items-center": true,
+        grid: true,
         [className]: true,
-        ...widthConditions(width),
-        ...paddingxConditions(paddingx),
+        "grid-cols-2": columns == 2,
+        "grid-cols-3": columns == 3,
+        "grid-cols-4": columns == 4,
         ...justifyConditions(justify),
+        ...itemsConditions(items),
         ...gapConditions(spacing),
-        ...paddingConditions(padding),
       })}
     >
       {children}
     </div>
   );
 };
-// export default HStack;
