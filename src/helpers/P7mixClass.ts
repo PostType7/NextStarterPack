@@ -28,6 +28,15 @@ export const paddingxConditions = (value: string) => {
   };
 };
 
+export const paddingyConditions = (value: string) => {
+  return {
+    "py-2": value === "sm",
+    "py-4": value === "md",
+    "py-6": value === "lg",
+    "p-9": value === "xl",
+  };
+};
+
 export const sizeConditions = (value: string) => {
   return {
     "w-9 h-9": value === "sm",
@@ -50,19 +59,20 @@ export const textColorConditions = (value: string) => {
 
 export const textHoverColorConditions = (value: string) => {
   return {
-    "hover:text-gray-700": value === "primary",
-    "hover:text-gray-300": value === "light",
-    "hover:text-red-400": value === "error",
-    "hover:text-green-400": value === "success",
-    "hover:text-blue-700": value === "link-primary",
+    "hover:text-gray-700 active:text-gray-800": value === "primary",
+    "hover:text-blue-400 active:text-blue-500": value === "light",
+    "hover:text-red-700 active:text-red-800": value === "error",
+    "hover:text-green-400 active:text-green-500": value === "success",
+    "hover:text-blue-700 active:text-blue-800": value === "link-primary",
   };
 };
 
 export const bgColorConditions = (value: string) => {
   return {
-    "bg-gray-300": value === "primary",
-    "bg-red-300": value === "error",
-    "bg-green-300": value === "success",
+    "bg-gray-500": value === "primary",
+    "bg-red-500": value === "error",
+    "bg-green-500": value === "success",
+    "bg-yellow-500": value === "warning",
   };
 };
 
@@ -104,25 +114,31 @@ export const itemsConditions = (value: string) => {
     "items-start": value === "start",
     "items-end": value === "end",
     "items-center": value === "center",
-    // "justify-between": value === "between",
-    // "justify-around": value === "around",
-    // "justify-evenly": value === "evenly",
   };
 };
 
 export const widthConditions = (value: string) => {
   return {
     "w-full flex-1": value === "full",
-    "w-1/2": value === "half",
-    "w-1/3": value === "third",
-    "w-1/4": value === "quarter",
-    "w-1/5": value === "fifth",
-    "w-1/6": value === "sixth",
-    "w-1/12": value === "twelfth",
+    "xl:w-3/4": value === "3/4", // 75%
+    "xl:w-2/3": value === "2/3", // 66%
+    "w-1/2": value === "1/2", // 50%
+    "w-1/3": value === "1/3", // 33.3%
+    "w-1/4": value === "1/4", // 25%
+    "w-1/5": value === "1/5", // 20%
+    "w-1/6": value === "1/6", // 16.6%
+    "w-1/9": value === "1/9",
+    "w-1/12": value === "1/12", // 8.3%
 
     "w-fit": value === "fit",
     "w-min": value === "min",
     "w-max": value === "max",
+  };
+};
+
+export const transition = () => {
+  return {
+    "transition duration-150 ease-in-out": true,
   };
 };
 
