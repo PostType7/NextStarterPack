@@ -6,7 +6,7 @@ body {
 } */
 
 #__next {
-  @apply flex flex-col h-screen text-gray-600 leading-normal text-base tracking-normal;
+  @apply flex flex-col min-h-screen text-gray-600 leading-normal text-base tracking-normal;
 }
 
 @tailwind utilities;

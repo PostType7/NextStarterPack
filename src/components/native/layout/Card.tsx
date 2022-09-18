@@ -4,6 +4,8 @@ import {
   paddingConditions,
   widthConditions,
   bgColorConditions,
+  paddingxConditions,
+  paddingyConditions,
 } from "helpers/P7mixClass";
 
 interface Props {
@@ -37,8 +39,7 @@ export const Card: React.FC<Props> = ({
       {header ? (
         <div
           className={mixClass({
-            "border-b": true,
-            ...paddingConditions(spacing),
+            "border-b p-4": true,
           })}
         >
           {header}
@@ -46,8 +47,9 @@ export const Card: React.FC<Props> = ({
       ) : null}
       <div
         className={mixClass({
+          "px-4": true,
           "flex items-center": horizontal,
-          ...paddingConditions(spacing),
+          ...paddingyConditions(spacing),
           ...gapConditions(spacing),
         })}
       >
@@ -56,8 +58,7 @@ export const Card: React.FC<Props> = ({
       {footer ? (
         <div
           className={mixClass({
-            "border-t flex": true,
-            ...paddingConditions(spacing),
+            "border-t p-4": true,
           })}
         >
           {footer}
@@ -66,4 +67,3 @@ export const Card: React.FC<Props> = ({
     </div>
   );
 };
-// export default HStack;

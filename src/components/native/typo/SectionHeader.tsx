@@ -8,7 +8,7 @@ interface Props {
 export const SectionHeader: React.FC<Props> = ({ title, actions }) => {
   return (
     <HStack className="py-6">
-      <TextXL>{title}</TextXL>
+      <TextXL className="flex-1">{title}</TextXL>
       {actions ? actions : null}
     </HStack>
   );

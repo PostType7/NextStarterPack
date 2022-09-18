@@ -1,8 +1,9 @@
-import { mixClass } from "helpers/P7mixClass";
+import { mixClass, transition, widthConditions } from "helpers/P7mixClass";
 import { HStack } from "../layout";
 
 interface Props {
   bgColor?: string;
+  width?: string;
   icon?: any;
   className?: string;
   text?: string;
@@ -11,18 +12,24 @@ interface Props {
 }
 export const Button: React.FC<Props> = ({
   className = "",
-  bgColor = "link-primary",
+  width = "",
+  bgColor = "primary",
   icon,
-  text,
-  href,
-  onClick,
   children,
-}) => {
-  return (
-    <button className="w-max rounded shadow-md inline-block px-6 py-3.5 bg-blue-600 text-white font-medium text-xs hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
-      <HStack justify="left" spacing="sm">
-        {icon ? icon : null} <span>{children}</span>
-      </HStack>
-    </button>
-  );
-};
+}) => (
+  <button
+    className={mixClass({
+      ["rounded shadow-md inline-block px-6 py-3.5 font-medium text-xs hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"]: true,
+      [className]: true,
+      "bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-800 text-white": bgColor == "primary",
+      "bg-slate-400 hover:bg-slate-500 focus:bg-slate-500 active:bg-slate-600 text-white": bgColor == "secondary",
+      "bg-slate-50 hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-200 text-gray-600": bgColor == "light",
+      ...widthConditions(width),
+      ...transition(),
+    })}
+  >
+    <HStack justify="left" spacing="sm">
+      {icon ? icon : null} <div className="flex-1">{children}</div>
+    </HStack>
+  </button>
+);

@@ -30,7 +30,7 @@ export const NavItem: React.FC<Props> = ({
     <Link href={href ? href : "#"}>
       <a
         className={mixClass({
-          "cursor-pointer": true,
+          "cursor-pointer transition duration-150 ease-in-out": true,
           [className]: true,
           ...widthConditions(width),
           ...textColorConditions(color),

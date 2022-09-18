@@ -22,7 +22,7 @@ export const HStack: React.FC<Props> = ({
   children,
   padding = "",
   paddingx = "",
-  width = "",
+  width = "full",
 }) => {
   return (
     <div

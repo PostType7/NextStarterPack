@@ -18,7 +18,7 @@ export const VStack: React.FC<Props> = ({
   spacing = "md",
   justify = "between",
   items = "",
-  width = "",
+  width = "full",
   children,
 }) => {
   return (
