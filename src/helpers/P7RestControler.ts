@@ -12,8 +12,9 @@ export const fetchApi = (endpoint: string, attributes: any, callback: any) => {
   })
     .then((response) => response.text())
     .then((response) => callback(JSON.parse(response)))
-    .catch((error: any) =>
-      callback({ error: { message: "Unexpected feth error." } })
+    .catch(
+      (error: any) => callback({ error: { message: "Unexpected feth error." } })
+      // console.log(error)
     );
 };
 
