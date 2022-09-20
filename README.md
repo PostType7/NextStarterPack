@@ -14,3 +14,6 @@ https://www.fastify.io/
 Motion
 https://dev.to/ivandotv/full-page-transitions-with-next-js-1co5s
 
+Author permission
+https://www.gyanblog.com/javascript/strapi-create-article-jwt-author-edit-update/
+
