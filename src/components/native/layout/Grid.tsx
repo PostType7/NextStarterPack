@@ -25,9 +25,9 @@ export const Grid: React.FC<Props> = ({
       className={mixClass({
         grid: true,
         [className]: true,
-        "grid-cols-2": columns == 2,
-        "grid-cols-3": columns == 3,
-        "grid-cols-4": columns == 4,
+        "md:grid-cols-2": columns == 2,
+        "md:grid-cols-3": columns == 3,
+        "md:grid-cols-4": columns == 4,
         ...justifyConditions(justify),
         ...itemsConditions(items),
         ...gapConditions(spacing),
