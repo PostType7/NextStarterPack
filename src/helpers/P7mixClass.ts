@@ -119,7 +119,8 @@ export const itemsConditions = (value: string) => {
 
 export const widthConditions = (value: string) => {
   return {
-    "w-full flex-1": value === "full",
+    "w-full": value === "full",
+    "w-full flex-1": value === "full-flex",
     "xl:w-3/4": value === "3/4", // 75%
     "xl:w-2/3": value === "2/3", // 66%
     "w-1/2": value === "1/2", // 50%
