@@ -1,27 +1,45 @@
-
+import { useRouter } from "next/router";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { HStack } from "../layout";
 
-
 interface Props {
   className?: string;
-  text?: string;
-  onClick?: any;
+  page?: number;
+  pages?: number;
+  router: any;
 }
 export const Pagination: React.FC<Props> = ({
   className = "",
-  text,
-  onClick,
-  children,
+  page = 1,
+  pages = 0,
+
 }) => {
+  const router = useRouter();
   return (
     <HStack justify="left" spacing="sm">
-      <div className="px-3 py-1.5 hover:bg-slate-100 hover:shadow cursor-pointer hover:text-blue-800 transition duration-150 ease-in-out"><FiChevronLeft/></div>
-      <div className="px-3 py-1.5 hover:bg-slate-100 hover:shadow cursor-pointer hover:text-blue-800 transition duration-150 ease-in-out">1</div>
-      <div className="px-3 py-1.5 hover:bg-slate-100 hover:shadow cursor-pointer hover:text-blue-800 transition duration-150 ease-in-out">2</div>
-      <div className="px-3 py-1.5 shadow bg-white rounded">3</div>
-      <div className="px-3 py-1.5 hover:bg-slate-100 hover:shadow cursor-pointer hover:text-blue-800 transition duration-150 ease-in-out">4</div>
-      <div className="px-3 py-1.5 hover:bg-slate-100 hover:shadow cursor-pointer hover:text-blue-800 transition duration-150 ease-in-out"><FiChevronRight/></div>
+      <div className="px-3 py-1.5 hover:bg-slate-100 hover:shadow cursor-pointer hover:text-blue-800 transition duration-150 ease-in-out">
+        <FiChevronLeft />
+      </div>
+      {Array(pages)
+        .fill(0)
+        .map((el: any, i: number) => {
+          return page != i + 1 ? (
+            <div
+              onClick={(e) => {
+                e.preventDefault();
+                router.push(`/backoffice/notifications/${i + 1}`);
+              }}
+              className="px-3 py-1.5 hover:bg-white rounded cursor-pointer hover:text-blue-700 transition duration-150 ease-in-out"
+            >
+              {i + 1}{" "}
+            </div>
+          ) : (
+            <div className="px-3 py-1.5 shadow bg-white rounded">{i + 1}</div>
+          );
+        })}
+      <div className="px-3 py-1.5 hover:bg-slate-100 hover:shadow cursor-pointer hover:text-blue-800 transition duration-150 ease-in-out">
+        <FiChevronRight />
+      </div>
     </HStack>
   );
 };
