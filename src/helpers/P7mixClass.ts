@@ -30,6 +30,7 @@ export const paddingxConditions = (value: string) => {
 
 export const paddingyConditions = (value: string) => {
   return {
+    "": value === "none",
     "py-2": value === "sm",
     "py-4": value === "md",
     "py-6": value === "lg",
