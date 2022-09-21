@@ -4,17 +4,13 @@ import { HStack } from "../layout";
 
 interface Props {
   className?: string;
-  page?: number;
   pages?: number;
-  router: any;
+  page?: number
 }
-export const Pagination: React.FC<Props> = ({
-  className = "",
-  page = 1,
-  pages = 0,
-
-}) => {
+export const Pagination: React.FC<Props> = ({ className = "", pages = 0, page=1 }) => {
   const router = useRouter();
+  // @ts-ignore
+  
   return (
     <HStack justify="left" spacing="sm">
       <div className="px-3 py-1.5 hover:bg-slate-100 hover:shadow cursor-pointer hover:text-blue-800 transition duration-150 ease-in-out">
@@ -22,9 +18,10 @@ export const Pagination: React.FC<Props> = ({
       </div>
       {Array(pages)
         .fill(0)
-        .map((el: any, i: number) => {
+        .map((el:any, i: number) => {
           return page != i + 1 ? (
             <div
+              key={`inactive${i}`}
               onClick={(e) => {
                 e.preventDefault();
                 router.push(`/backoffice/notifications/${i + 1}`);
@@ -34,7 +31,7 @@ export const Pagination: React.FC<Props> = ({
               {i + 1}{" "}
             </div>
           ) : (
-            <div className="px-3 py-1.5 shadow bg-white rounded">{i + 1}</div>
+            <div key={`active${i}`} className="px-3 py-1.5 shadow bg-white rounded">{i + 1}</div>
           );
         })}
       <div className="px-3 py-1.5 hover:bg-slate-100 hover:shadow cursor-pointer hover:text-blue-800 transition duration-150 ease-in-out">
