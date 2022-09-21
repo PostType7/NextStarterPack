@@ -47,7 +47,7 @@ export const Card: React.FC<Props> = ({
       ) : null}
       <div
         className={mixClass({
-          "px-4": true,
+          "px-4": spacing != "none",
           "flex items-center": horizontal,
           ...paddingyConditions(spacing),
           ...gapConditions(spacing),
