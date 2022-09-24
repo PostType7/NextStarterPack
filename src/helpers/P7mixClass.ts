@@ -48,6 +48,17 @@ export const sizeConditions = (value: string) => {
   };
 };
 
+export const textSizeConditions = (value: string) => {
+  return {
+    "text-xs": value === "xs",
+    "text-sm": value === "sm",
+    "text-md": value === "md",
+    "text-lg": value === "lg",
+    "text-xl": value === "xl",
+    "text-4xl": value === "4xl",
+  };
+};
+
 export const textColorConditions = (value: string, active?: boolean) => {
   return {
     "text-gray-600": value === "primary" && !active,
@@ -128,6 +139,7 @@ export const itemsConditions = (value: string) => {
 
 export const widthConditions = (value: string) => {
   return {
+    "": value === "null",
     "w-full": value === "full",
     "w-full flex-1": value === "full-flex",
     "xl:w-3/4": value === "3/4", // 75%
