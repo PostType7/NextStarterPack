@@ -14,6 +14,7 @@ body {
 @font-face {
   font-family: "helveticaNaue";
   src: url("../public/fonts/helveticaNeue/HelveticaNeue-Medium.woff2");
+  font-display: swap;
 }
 
 html {

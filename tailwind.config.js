@@ -16,12 +16,13 @@ module.exports = {
         normal: "normal",
       },
       width: {
-        '1/9': "12%"
+        "1/9": "12%",
       },
       colors: {
         slate: colors.slate,
       },
     },
   },
+  
   plugins: [],
 };
