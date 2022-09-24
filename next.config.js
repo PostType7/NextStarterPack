@@ -1,20 +1,33 @@
-/**
-const withPlugins = require('next-compose-plugins');
-const withImages = require('next-images');
-const nextConfig = {
-  webpack: (config) => {
-    return config;
+const securityHeaders = [
+  {
+    key: "X-DNS-Prefetch-Control",
+    value: "on",
+  },
+  {
+    key: "Cache-Control",
+    value: "public, max-age=9999999999, must-revalidate",
+  },
+];
+
+module.exports = {
+  serverRuntimeConfig: {
+    PROJECT_ROOT: __dirname
+},
+  async headers() {
+    return [
+      {
+        // Apply these headers to all routes in your application.
+        source: "/:path*",
+        headers: securityHeaders,
+      },
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap.xml',
+        destination: '/api/sitemap',
+      },
+    ];
   },
 };
-
-module.exports = withPlugins([withImages], nextConfig);
- */
- 
-/**
- * @type {import('next').NextConfig}
- */
-const nextConfig = {
-  /* config options here */
-}
-
-module.exports = nextConfig
