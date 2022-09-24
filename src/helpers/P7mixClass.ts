@@ -38,6 +38,7 @@ export const paddingyConditions = (value: string) => {
   };
 };
 
+/* coreersponding with tailwind config */
 export const sizeConditions = (value: string) => {
   return {
     "w-9 h-9": value === "sm",
@@ -47,33 +48,40 @@ export const sizeConditions = (value: string) => {
   };
 };
 
-export const textColorConditions = (value: string) => {
+export const textColorConditions = (value: string, active?: boolean) => {
   return {
-    "text-gray-700": value === "primary",
-    "text-gray-400": value === "light",
-    "text-red-500": value === "error",
-    "text-green-600": value === "success",
-    "text-blue-500": value === "link-primary",
-    "text-white": value === "white",
+    "text-gray-600": value === "primary" && !active,
+    "text-gray-500": value === "light" && !active,
+    "text-red-600": value === "error" && !active,
+    "text-green-700": value === "success" && !active,
+    "text-blue-500": value === "link-primary" && !active,
+    "text-white": value === "white" && !active,
+
+    "text-gray-800": value === "primary" && active,
+    "text-gray-700": value === "light" && active,
+    "text-red-700": value === "error" && active,
+    "text-green-800": value === "success" && active,
+    "text-blue-700": value === "link-primary" && active,
+    "text-gray-100": value === "white" && active,
   };
 };
 
 export const textHoverColorConditions = (value: string) => {
   return {
-    "hover:text-gray-700 active:text-gray-800": value === "primary",
+    "hover:text-gray-800 active:text-gray-900": value === "primary",
     "hover:text-blue-400 active:text-blue-500": value === "light",
     "hover:text-red-700 active:text-red-800": value === "error",
     "hover:text-green-400 active:text-green-500": value === "success",
-    "hover:text-blue-700 active:text-blue-800": value === "link-primary",
+    "hover:text-blue-700 active:text-blue-900": value === "link-primary",
   };
 };
 
 export const bgColorConditions = (value: string) => {
   return {
-    "bg-gray-500": value === "primary",
-    "bg-red-500": value === "error",
-    "bg-green-500": value === "success",
-    "bg-yellow-500": value === "warning",
+    "bg-gray-700": value === "primary",
+    "bg-red-700": value === "error",
+    "bg-green-700": value === "success",
+    "bg-yellow-700": value === "warning",
   };
 };
 
