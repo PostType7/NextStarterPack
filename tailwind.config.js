@@ -18,6 +18,16 @@ module.exports = {
       width: {
         "1/9": "12%",
       },
+      minWidth: {
+        "12": "3rem",
+        "16": "4rem",
+        "24": "6rem",
+      },
+      min: {
+        "12": "3rem",
+        "16": "4rem",
+        "24": "6rem",
+      },
       colors: {
         slate: colors.slate,
       },
