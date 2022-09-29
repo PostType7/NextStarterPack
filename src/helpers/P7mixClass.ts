@@ -3,6 +3,7 @@
 */
 export const gapConditions = (value: string) => {
   return {
+    "": value === "none",
     "gap-1": value === "xs",
     "gap-2": value === "sm",
     "gap-4": value === "md",
@@ -11,16 +12,9 @@ export const gapConditions = (value: string) => {
   };
 };
 
-export const paddingConditions = (value: string) => {
-  return {
-    "p-2": value === "sm",
-    "p-4": value === "md",
-    "p-6": value === "lg",
-    "p-9": value === "xl",
-  };
-};
 export const paddingxConditions = (value: string) => {
   return {
+    "": value === "none",
     "px-2": value === "sm",
     "px-4": value === "md",
     "px-6": value === "lg",
@@ -34,19 +28,32 @@ export const paddingyConditions = (value: string) => {
     "py-2": value === "sm",
     "py-4": value === "md",
     "py-6": value === "lg",
-    "p-9": value === "xl",
+    "py-9": value === "xl",
+  };
+};
+
+export const paddingrConditions = (value: string) => {
+  return {
+    "": value === "none",
+    "pr-2": value === "sm",
+    "pr-4": value === "md",
+    "pr-6": value === "lg",
+    "pr-9": value === "xl",
+  };
+};
+
+export const paddinglConditions = (value: string) => {
+  return {
+    "": value === "none",
+    "pl-2": value === "sm",
+    "pl-4": value === "md",
+    "pl-6": value === "lg",
+    "pl-9": value === "xl",
   };
 };
 
 /* coreersponding with tailwind config */
-export const sizeConditions = (value: string) => {
-  return {
-    "w-9 h-9": value === "sm",
-    "w-12 h-12": value === "md",
-    "w-16 h-16": value === "lg",
-    "w-24 h-24": value === "xl",
-  };
-};
+
 
 export const textSizeConditions = (value: string) => {
   return {
@@ -55,7 +62,7 @@ export const textSizeConditions = (value: string) => {
     "text-md": value === "md",
     "text-lg": value === "lg",
     "text-xl": value === "xl",
-    "text-4xl": value === "4xl",
+    "text-4xl": value === "xxl",
   };
 };
 
@@ -92,7 +99,13 @@ export const bgColorConditions = (value: string) => {
     "bg-gray-700": value === "primary",
     "bg-red-700": value === "error",
     "bg-green-700": value === "success",
-    "bg-yellow-700": value === "warning",
+    "bg-yellow-600": value === "warning",
+    "bg-blue-700": value === "info",
+    "bg-gray-300 bg-opacity-20": value === "primary-light",
+    "bg-red-300 bg-opacity-20": value === "error-light",
+    "bg-green-300 bg-opacity-20": value === "success-light",
+    "bg-yellow-300 bg-opacity-20": value === "warning-light",
+    "bg-blue-300 bg-opacity-20": value === "info-light",
   };
 };
 
@@ -101,60 +114,6 @@ export const roundedConditions = (value: string) => {
     rounded: value === "md",
     "rounded-lg": value === "lg",
     "rounded-full": value === "full",
-  };
-};
-
-/* 
-  noeditable conditions 
-*/
-export const justifyConditions = (value: string) => {
-  return {
-    "justify-start": value === "start",
-    "justify-end": value === "end",
-    "justify-center": value === "center",
-    "justify-between": value === "between",
-    "justify-around": value === "around",
-    "justify-evenly": value === "evenly",
-  };
-};
-
-/* 
-  noeditable conditions 
-*/
-export const textAlignConditions = (value: string) => {
-  return {
-    "text-left": value === "left",
-    "text-center": value === "center",
-    "text-right": value === "right",
-  };
-};
-
-export const itemsConditions = (value: string) => {
-  return {
-    "items-start": value === "start",
-    "items-end": value === "end",
-    "items-center": value === "center",
-  };
-};
-
-export const widthConditions = (value: string) => {
-  return {
-    "": value === "null",
-    "w-full": value === "full",
-    "w-full flex-1": value === "full-flex",
-    "xl:w-3/4": value === "3/4", // 75%
-    "xl:w-2/3": value === "2/3", // 66%
-    "w-1/2": value === "1/2", // 50%
-    "w-1/3": value === "1/3", // 33.3%
-    "w-1/4": value === "1/4", // 25%
-    "w-1/5": value === "1/5", // 20%
-    "w-1/6": value === "1/6", // 16.6%
-    "w-1/9": value === "1/9",
-    "w-1/12": value === "1/12", // 8.3%
-
-    "w-fit": value === "fit",
-    "w-min": value === "min",
-    "w-max": value === "max",
   };
 };
 
