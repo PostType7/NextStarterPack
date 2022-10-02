@@ -1,7 +1,7 @@
 /* 
   editable conditions 
 */
-export const gapConditions = (value: string) => {
+export const gapMix = (value: string) => {
   return {
     "": value === "none",
     "gap-1": value === "xs",
@@ -12,7 +12,7 @@ export const gapConditions = (value: string) => {
   };
 };
 
-export const paddingxConditions = (value: string) => {
+export const paddingxMix = (value: string) => {
   return {
     "": value === "none",
     "px-2": value === "sm",
@@ -22,7 +22,7 @@ export const paddingxConditions = (value: string) => {
   };
 };
 
-export const paddingyConditions = (value: string) => {
+export const paddingyMix = (value: string) => {
   return {
     "": value === "none",
     "py-2": value === "sm",
@@ -32,7 +32,7 @@ export const paddingyConditions = (value: string) => {
   };
 };
 
-export const paddingrConditions = (value: string) => {
+export const paddingrMix = (value: string) => {
   return {
     "": value === "none",
     "pr-2": value === "sm",
@@ -42,7 +42,7 @@ export const paddingrConditions = (value: string) => {
   };
 };
 
-export const paddinglConditions = (value: string) => {
+export const paddinglMix = (value: string) => {
   return {
     "": value === "none",
     "pl-2": value === "sm",
@@ -54,8 +54,7 @@ export const paddinglConditions = (value: string) => {
 
 /* coreersponding with tailwind config */
 
-
-export const textSizeConditions = (value: string) => {
+export const textSizeMix = (value: string) => {
   return {
     "text-xs": value === "xs",
     "text-sm": value === "sm",
@@ -66,41 +65,54 @@ export const textSizeConditions = (value: string) => {
   };
 };
 
-export const textColorConditions = (value: string, active?: boolean) => {
+export const textColorMix = (value: string, active?: boolean) => {
   return {
-    "text-gray-600": value === "primary" && !active,
-    "text-gray-500": value === "light" && !active,
-    "text-red-600": value === "error" && !active,
-    "text-green-700": value === "success" && !active,
-    "text-blue-500": value === "link-primary" && !active,
-    "text-white": value === "white" && !active,
+    "text-gray-700": value === "primary",
+    "text-gray-400": value === "light",
+    "text-gray-500": value === "dark",
+    "text-red-600": value === "error",
+    "text-green-700": value === "success",
+    "text-green-200": value === "success-light",
+    "text-blue-500": value === "link-primary",
+    "text-white": value === "white",
 
-    "text-gray-800": value === "primary" && active,
-    "text-gray-700": value === "light" && active,
-    "text-red-700": value === "error" && active,
-    "text-green-800": value === "success" && active,
-    "text-blue-700": value === "link-primary" && active,
-    "text-gray-100": value === "white" && active,
+    // "text-gray-700": value === "primary" && !active,
+    // "text-gray-400": value === "light" && !active,
+    // "text-gray-500": value === "dark" && !active,
+    // "text-red-600": value === "error" && !active,
+    // "text-green-700": value === "success" && !active,
+    // "text-blue-500": value === "link-primary" && !active,
+    // "text-white": value === "white" && !active,
+
+    // "text-gray-800":
+    //   (value === "primary" && active) || (value === "light" && active),
+    // "text-red-700": value === "error" && active,
+    // "text-green-800": value === "success" && active,
+    // "text-blue-700": value === "link-primary" && active,
+    // "text-gray-100": value === "white" && active,
   };
 };
 
-export const textHoverColorConditions = (value: string) => {
+export const textHoverColorMix = (value: string) => {
   return {
     "hover:text-gray-800 active:text-gray-900": value === "primary",
     "hover:text-blue-400 active:text-blue-500": value === "light",
+    "hover:text-blue-500 active:text-blue-600": value === "dark",
     "hover:text-red-700 active:text-red-800": value === "error",
     "hover:text-green-400 active:text-green-500": value === "success",
     "hover:text-blue-700 active:text-blue-900": value === "link-primary",
   };
 };
 
-export const bgColorConditions = (value: string) => {
+export const bgColorMix = (value: string) => {
   return {
     "bg-gray-700": value === "primary",
     "bg-red-700": value === "error",
     "bg-green-700": value === "success",
     "bg-yellow-600": value === "warning",
     "bg-blue-700": value === "info",
+    "bg-gray-50": value === "light",
+    "bg-gray-500": value === "dark",
     "bg-gray-300 bg-opacity-20": value === "primary-light",
     "bg-red-300 bg-opacity-20": value === "error-light",
     "bg-green-300 bg-opacity-20": value === "success-light",
@@ -109,7 +121,7 @@ export const bgColorConditions = (value: string) => {
   };
 };
 
-export const roundedConditions = (value: string) => {
+export const roundedMix = (value: string) => {
   return {
     rounded: value === "md",
     "rounded-lg": value === "lg",
