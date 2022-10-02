@@ -7,6 +7,8 @@ https://github.com/PostType7
 
 ## Export to static
 
+If you in defoult `~/NextStarterPack` dir then:
+
 `yarn export`
 `cd out`
 `http-server`
