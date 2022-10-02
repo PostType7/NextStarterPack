@@ -2,8 +2,12 @@
 
 Stater Next.js with TypeScript and TailWind
 
-Read more:
+To run Next.js with default Theme Read more:
 https://github.com/PostType7
+
+## Project structure sheme:
+
+https://github.com/PostType7#organisation-repositories-map
 
 ## Export to static
 
