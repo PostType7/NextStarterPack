@@ -72,8 +72,9 @@ export const textColorMix = (value: string, active?: boolean) => {
     "text-gray-500": value === "dark",
     "text-red-600": value === "error",
     "text-green-700": value === "success",
+    "text-yellow-600": value === "warning",
     "text-green-200": value === "success-light",
-    "text-blue-500": value === "link-primary",
+    "text-blue-500": value === "info" || value === "link-primary",
     "text-white": value === "white",
 
     // "text-gray-700": value === "primary" && !active,
