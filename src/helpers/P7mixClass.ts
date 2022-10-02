@@ -137,7 +137,7 @@ export const transition = () => {
 };
 
 /* 
-  methods 
+  methods
 */
 export const mixClass = (conditionsObject: any) => {
   let out = "";
